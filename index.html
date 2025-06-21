@@ -16,7 +16,6 @@
       color: white;
       height: 100vh;
       padding-top: 20px;
-      box-sizing: border-box;
     }
     nav a {
       display: flex;
@@ -46,26 +45,31 @@
       margin-top: 20px;
     }
     .project-box {
-      border: 1px solid #cccccc;
-      padding: 25px;
+      border: 1px solid #ccc;
+      padding: 30px;
       width: 300px;
       text-align: center;
       box-shadow: 2px 2px 6px #aaa;
-      border-radius: 10px;
+      border-radius: 12px;
+      transition: transform 0.3s, background 0.3s;
+      background-color: #f8f8f8;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .project-box:hover {
+      transform: scale(1.05);
+      background-color: #e0f7fa;
+      box-shadow: 4px 4px 12px #888;
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="index.html">
-      <span class="icon">🏠</span> Home
-    </a>
-    <a href="profile.html">
-      <span class="icon">👤</span> Profile
-    </a>
-    <a href="#projects">
-      <span class="icon">📁</span> Projects
-    </a>
+    <a href="index.html"><span class="icon">🏠</span> Home</a>
+    <a href="profile.html"><span class="icon">👤</span> Profile</a>
+    <a href="#projects"><span class="icon">📁</span> Projects</a>
   </nav>
 
   <main>
@@ -73,9 +77,9 @@
     <section id="projects">
       <h2>Projects</h2>
       <div class="projects">
-        <div class="project-box">Machine Learning</div>
-        <div class="project-box">Natural Language Processing</div>
-        <div class="project-box">Computer Vision</div>
+        <a href="ml-projects.html" class="project-box">Machine Learning</a>
+        <a href="nlp-projects.html" class="project-box">Natural Language Processing</a>
+        <a href="cv-projects.html" class="project-box">Computer Vision</a>
       </div>
     </section>
   </main>
