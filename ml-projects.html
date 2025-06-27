@@ -21,15 +21,34 @@
       border: 2px solid #ccc;
       border-radius: 6px;
     }
-    .project-item {
-      padding: 30px;
-      border: 1px solid #2a2a2a;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      transition: background 0.2s;
+    .container {
+      display: flex;
+      flex-wrap: wrap;         /* This ensures boxes wrap to next line */
+      gap: 16px;               /* Space between boxes */
+      justify-content: flex-start;
+      max-width: 100%;         /* Prevents overflow */
+      padding: 1rem;
+      box-sizing: border-box;
     }
-    .project-item:hover {
-      background: #f1f1f1;
+    .project-box {
+      flex: 1 1 200px;
+      border: 1px solid #ccc;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 2px 2px 6px #aaa;
+      border-radius: 12px;
+      transition: transform 0.3s, background 0.3s;
+      background-color: #bee5ea;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .project-box:hover {
+      transform: scale(1.05);
+      background-color: #e0f7fa;
+      box-shadow: 4px 4px 12px #888;
     }
   </style>
 </head>
@@ -37,10 +56,10 @@
   <h1>Machine Learning Projects</h1>
   <input type="text" id="searchInput" placeholder="Search projects..." onkeyup="searchProjects()" />
 
-  <div id="projectList">
-    <div class="project-item"><a href="ml-projects/project1.html">Project 1 - House Price Prediction</a></div>
-    <div class="project-item">ML Project 2 - Customer Churn Prediction</div>
-    <div class="project-item">ML Project 3 - Loan Default Classification</div>
+  <div class="container">
+    <a href="ml-projects/project1.html" class="project-box">Project 1 - HUMAN ACTIVITY RECOGNITION</a>
+    <a href="ml-projects/project1.html" class="project-box">Project 1 - HUMAN ACTIVITY RECOGNITION</a>
+    <a href="ml-projects/project1.html" class="project-box">Project 1 - HUMAN ACTIVITY RECOGNITION</a>
   </div>
 
   <script>
