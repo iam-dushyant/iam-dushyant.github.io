@@ -44,7 +44,17 @@
       gap: 20px;
       margin-top: 20px;
     }
+    .container {
+      display: flex;
+      flex-wrap: wrap;         /* This ensures boxes wrap to next line */
+      gap: 16px;               /* Space between boxes */
+      justify-content: flex-start;
+      max-width: 100%;         /* Prevents overflow */
+      padding: 1rem;
+      box-sizing: border-box;
+    }
     .project-box {
+      flex: 1 1 200px;
       border: 1px solid #ccc;
       padding: 30px;
       width: 300px;
@@ -77,11 +87,15 @@
     <h1>DUSHYANT KHATRI</h1>
     <section id="projects">
       <h2>Projects</h2>
-      <div class="projects">
+      <div class="container">
         <a href="ml-projects.html" class="project-box">Machine Learning</a>
         <a href="nlp-projects.html" class="project-box">Natural Language Processing</a>
         <a href="cv-projects.html" class="project-box">Computer Vision</a>
         <a href="evo-algo-projects.html" class="project-box">Evolutionary Algorithms</a>
+        <a href="#placeholder" class="project-box">MLOps CLI</a>
+        <a href="#placeholder" class="project-box">Gen AI</a>
+        <a href="#placeholder" class="project-box">High Performance Computing</a>
+        <a href="#placeholder" class="project-box">Multi-objective Optimisation and Decision Making</a>
       </div>
     </section>
   </main>
