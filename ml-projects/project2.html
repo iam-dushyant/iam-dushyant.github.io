@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The "classic" MNIST classification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      background: #fbf7ee;
+      color: #333;
+    }
+    h1, h2 {
+      margin-top: 2rem;
+      color: #222;
+    }
+    code {
+      color: #000000;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #ffffff;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Introduction</h1>
+
+  <p>
+    This project uses the classic Machine Learning problem of MNIST classification, recognising the digits 
+    from 0-9. With using ML models, this problem is extended further by providing an interface for the 
+    user to input a number and experiment whether the ML models trained are able to predict the number 
+    accurately.
+  </p>
+  <p>
+    
+  </p>
+
+  <div class="section">
+    <h2>🧩 Project Objectives</h2>
+    <ul>
+      <li>To recognise, using Machine Learning, the actions were detected correctly.</li>
+      <li>To quantify accuracy and assess falsely detected classification.</li>
+      <li>To consider and discuss options to improve the accuracy of models.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>⚙️ My Implementation</h2>
+    <ol>
+      <li>Collected data with x parameters/features.</li>
+      <li>The data is fairly clean, so no data cleaning was performed.</li>
+      <li>Trained <code>LinearRegression</code> model using scikit-learn.</li>
+      <li>Evaluated the model with RMSE, R² score, and confusion matrix.</li>
+    </ol>
+
+    <pre><code>from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(X_train, y_train)</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>📊 Output</h2>
+    <p>
+      The model achieved acuuracy of.
+    </p>
+    <img src="" alt="Confusion Matrix" />
+  </div>
+
+  <div class="section">
+    <h2>✏️ What I Learned</h2>
+    <ul>
+      <li>Analysing and comparing different models, especially voting algorithms, where I used a combination of ML models.</li>
+      <li>To recognise wrongly predicted classifications and assess why these were wrongly assessed.</li>
+      <li>Next step: Options to improve the model or the data.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Resources</h2>
+    <ul>
+      <li><a href="https://github.com/iam-dushyant/mnist_classification" target="_blank">View on GitHub</a></li>
+      <li><a href="https://github.com/iam-dushyant/mnist_classification/tree/main/notebooks" target="_blank">Open Notebook</a></li>
+      <li><a href="https://github.com/iam-dushyant/mnist_classification" target="_blank">Download Dataset</a></li>
+    </ul>
+  </div>
+
+</body>
+</html>
