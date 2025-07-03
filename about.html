@@ -2,38 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profile</title>
-  <style>
-    body {
-      margin: 20px;
-      max-width: 600px;
-    }
-    h1, h2 {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color: #2c3e50;
-    }
-    section {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      margin-bottom: 30px;
-    }
-    nav {
-      display: flex;
-      justify-content: flex-end;
-      gap: 4rem;
-      padding: 1rem 4rem;
-      background: #180234;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 1.5rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About me</title>
+  <link rel="stylesheet" href="css/about.css" />
 </head>
+
 <body>
   <nav>
     <a href="index.html">Home</a>
@@ -41,29 +14,105 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <h1>Profile</h1>
+<h1>My timeline</h1>
 
-  <section>
-    <h2>Education</h2>
-    <p>MSc Advanced Computer Science, University of Exeter</p>
-    <p>MSc Advanced Mechanical Engineering with Aerospace, University of Strathclyde</p>
-    <p>BEng (Hons.) Naval Architecture with Ocean Engineering, University of Strathclyde</p>
-  </section>
+<div class="timeline-section" id="2025">
+  <div class="timeline-node"></div>
+  <div class="timeline-content">
+    <h2>2025</h2>
+    <p class="detail">Worked as a Change Manager for the first time, tackling 46 change tickets 
+      in my first week. Got praised for attention to detail and excellent time management skills 
+      for managing high volume of changes in a single week, especially having newly joined the change 
+      rota.
+    </p>
+    <p class="detail">Went travelling around Spain, Croatia and Italy for a whole month, exploring 
+      different culture, food and architecture. The trip included a mix of paddleboarding, surfing, 
+      hiking, and a lot of pints!
+    </p>
+  </div>
+</div>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Machine Learning</li>
-      <li>Natural Language Processing</li>
-      <li>Computer Vision</li>
-      <li>Web Development</li>
-    </ul>
-  </section>
+<div class="timeline-section" id="2024">
+  <div class="timeline-node"></div>
+  <div class="timeline-content">
+    <h2>2024</h2>
+    <p class="detail">Successfully completed the QA DevOps Practitioner course</p>
+    <p class="detail">Worked on automating "status" for data engine versions used by multiple 
+      teams at Barclays, sending them email notifications when their version is soon to be 
+      deprecated.</p>
+    <p class="detail">Launched my first Service Catalog product on AWS to remove reliance 
+      on the organisation's master account, defining IAM roles with permissions.</p>
+  </div>
+</div>
 
-  <section>
-    <h2>Contact Details</h2>
-    <p>Email: dushyant.khatri@icloud.com</p>
-    <p>Phone: +44 759 653 6143</p>
-  </section>
+<div class="timeline-section" id="2023">
+  <div class="timeline-node"></div>
+  <div class="timeline-content">
+    <h2>2023</h2>
+    <p class="detail">Joined the Public Cloud team as an SRE</p>
+    <p class="detail">Completed and graduated with an MSc in Advanced Computer Science 
+      from the University of Exeter, achieving Merit.
+    </p>
+  </div>
+</div>
+
+  <div class="timeline-section" id="2013">
+    <div class="timeline-node"></div>
+    <div class="timeline-content">
+      <h2>2013</h2>
+      <p class="detail">Started pursuing BEng (Hons.) Naval Architecture & Offshore Engineering 
+        at AMET University, Chennai, India</p>
+      <p class="detail">Reached top 10% of my batch, with best results in Engineering Mechanics 
+        and Graphics</p>
+    </div>
+  </div>
+
+  <div class="timeline-section" id="2014">
+    <div class="timeline-node"></div>
+    <div class="timeline-content">
+      <h2>2014</h2>
+      <p class="detail">Was awarded for best results for year 1 of my Engineering studies</p>
+      <p class="detail">Was considering moving to the UK to pursue years 3 and 4</p>
+    </div>
+  </div>
+
+  <div class="timeline-section" id="2015">
+    <div class="timeline-node"></div>
+    <div class="timeline-content">
+      <h2>2015</h2>
+      <p class="detail">Moved to Glasgow, Scotland, to pursue years 3 and 4, at the age of 19</p>
+      <p class="detail">With a huge difference between courses taught in India and in the UK, 
+        I proactively caught up with advanced skills of ship design in software, versus drawings 
+        on massive charts back in India.</p>
+    </div>
+  </div>
+
+  <div class="timeline-section" id="2016">
+    <div class="timeline-node"></div>
+    <div class="timeline-content">
+      <h2>2016</h2>
+      <p class="detail">Was awarded for best results for year 1 of my Engineering studies</p>
+      <p class="detail">Started my first job, working as a Food & Beverage team member for events in Glasgow, Edinburgh, and Perth</p>
+    </div>
+  </div>
+
+  <div class="timeline-section" id="2014">
+    <div class="timeline-node"></div>
+    <div class="timeline-content">
+      <h2>2014</h2>
+      <p class="detail">Was awarded for best results for year 1 of my Engineering studies</p>
+      <p class="detail">Was considering moving to the UK to pursue years 3 and 4</p>
+    </div>
+  </div>
+
+  <div class="timeline-section" id="2014">
+    <div class="timeline-node"></div>
+    <div class="timeline-content">
+      <h2>2014</h2>
+      <p class="detail">Was awarded for best results for year 1 of my Engineering studies</p>
+      <p class="detail">Was considering moving to the UK to pursue years 3 and 4</p>
+    </div>
+  </div>
+  <script src="js/about.js"></script>
 </body>
 </html>
