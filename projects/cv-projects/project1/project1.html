@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MNIST classification - A Computer Vision approach</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    background: #fdf8f2;
+    color: #333;
+    }
+
+    .hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Adjust height as needed */
+    overflow: hidden;
+    }
+
+    .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills and crops nicely */
+    }
+
+    .hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 232, 155);
+    font-size: 4rem;
+    text-align: center;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    margin: 0;
+    padding: 0 2rem;       /* Adds horizontal space inside the text block */
+    max-width: 90%;        /* Prevents it from overflowing hero container */
+    width: 80%;            /* Gives it a nice wider text box */
+    box-sizing: border-box; /* Makes padding play nicely with width */
+    word-wrap: break-word;
+    }
+
+    h2, h3 {
+    margin-top: 2rem;
+    color: #222;
+    }
+    code {
+      color: #000000;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #ffffff;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <img src="Project1.jpeg" alt="Hero Image" class="hero-image" />
+    <h1 class="hero-title">MNIST classification: A Computer Vision approach</h1>
+  </div>
+
+  <p>
+    The classic MNIST classification uses conventional Machine Learning algorithms to classify
+    numbers from the MNIST dataset.
+  </p>
+  <p>
+    While the modern solutions often rely on deep learning, this project demonstrates how traditional 
+    image processing techniques - such as edge detection, shape analysis, and feature extraction - 
+    can still be used for digital classification.
+  </p>
+  <p>
+    The purpose of this project is to explore Computer Vision and enhance my skills. This small 
+    project seemed a good starting point.
+  </p>
+
+  <div class="section">
+    <h2>Steps for implementation</h2>
+    <ol>
+        <li>Data preparation:</li>
+        <ul>
+            <li>Used the MNIST classification dataset of 28x28 grayscale images of handwritten
+                digits, ranging from 0 to 9.
+            </li>
+            <li>Processed each image by thresholding (converting to binary) and applying 
+                noise reduction if necessary.
+            </li>
+        </ul>
+        <li>Feature extraction:</li>
+        <ul>
+            <li>Applied Canny edge detection to highlight contours of each digit.</li>
+            <li>Extracted shape detectors, such as Hu Moments.</li>
+        </ul>
+        <li>Classifier</li>
+        <ul>
+            <li>Created feature vectors from the extracted shape descriptors.</li>
+            <li>Used a simple Machine Learning classifier.</li>
+            <li>Trained the ML classifier onto a subset of MNIST dataset.</li>
+        </ul>
+        <li>Evaluation</li>
+        <ul>
+            <li>Tested the trained classifier on a separate test set.</li>
+            <li>Computed accuracy and confusion matrix.</li>
+        </ul>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>📊 Output</h2>
+    <p>
+      The model achieved acuuracy of.
+    </p>
+    <img src="" alt="Confusion Matrix" />
+  </div>
+
+  <div class="section">
+    <h2>✏️ What I Learned</h2>
+    <ul>
+      <li>.</li>
+      <li>.</li>
+      <li>Next step: Include a real-time test tool for users to recognise digits.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Resources</h2>
+    <ul>
+      <li><a href="https://github.com/iam-dushyant/Human-Activity-Recognition" target="_blank">View on GitHub</a></li>
+      <li><a href="https://github.com/iam-dushyant/Human-Activity-Recognition/tree/main/notebooks/Initial_data_exploration.ipynb" target="_blank">Open Notebook</a></li>
+      <li><a href="https://github.com/iam-dushyant/Human-Activity-Recognition/tree/main/data/raw" target="_blank">Download Dataset</a></li>
+    </ul>
+  </div>
+
+</body>
+</html>
