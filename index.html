@@ -68,12 +68,22 @@
       color: var(--text-color);
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 2s steps(6) forwards 2s;
+      width: 0;               /* Prevent initial full display */
+      opacity: 0;             /* Hidden initially */
+      animation: typing 2s steps(6) forwards 2s, blink 0.75s step-end infinite alternate;
+      animation-fill-mode: forwards;
     }
 
+    /* Typing effect */
     @keyframes typing {
-      from { width: 0; }
-      to { width: 6ch; }
+      from { width: 0; opacity: 1; }
+      to { width: 6ch; opacity: 1; }
+    }
+
+    /* Optional cursor blink effect */
+    @keyframes blink {
+      from { border-right: 2px solid var(--accent-color); }
+      to { border-right: 2px solid transparent; }
     }
 
     @keyframes sketch {
