@@ -3,120 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Dushyant Khatri | Portfolio</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Roboto+Mono&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #141414;
-      --text-color: #ffffff;
-      --nav-bg-color: #1a1a1a;
-      --accent-color: #00FFFF; /* A vibrant cyan */
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    nav {
-      display: flex;
-      justify-content: flex-end;
-      gap: 4rem;
-      padding: 1rem 4rem;
-      background: var(--nav-bg-color);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    .hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .first-name {
-      font-family: 'Rock Salt', cursive;
-      font-size: clamp(3rem, 15vw, 8rem);
-      color: var(--accent-color);
-      white-space: nowrap;
-      opacity: 0;
-      animation: sketch 1.5s ease-out forwards;
-    }
-
-    .last-name {
-      font-family: 'Roboto Mono', monospace;
-      font-size: clamp(2rem, 8vw, 4rem);
-      color: var(--text-color);
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;               /* Prevent initial full display */
-      opacity: 0;             /* Hidden initially */
-      animation: typing 2s steps(6) forwards 2s, blink 0.75s step-end infinite alternate;
-      animation-fill-mode: forwards;
-    }
-
-    /* Typing effect */
-    @keyframes typing {
-      from { width: 0; opacity: 1; }
-      to { width: 6ch; opacity: 1; }
-    }
-
-    /* Optional cursor blink effect */
-    @keyframes blink {
-      from { border-right: 2px solid var(--accent-color); }
-      to { border-right: 2px solid transparent; }
-    }
-
-    @keyframes sketch {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Mobile responsiveness */
-    @media screen and (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 2rem 1rem;
-      }
-      
-      nav a {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <nav>
     <a href="about.html">About</a>
-    <a href="projects/projects.html">Projects</a>
+    <a href="work.html">Work</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="hero">
-    <div class="first-name">Dushyant</div>
-    <div class="last-name">Khatri</div>
-  </div>
+  <header class="hero" style="background-image: url('images/hero.jpg');">
+    <div class="overlay">
+      <div class="profile-image-container">
+        <img class="profile-image" src="images/profile.jpg" alt="Dushyant Khatri" />
+      </div>
+      <h1 class="first-name">Dushyant</h1>
+      <h2 class="last-name">Khatri</h2>
+      <p class="tagline">Entrepreneur • Strategist • Airbnb Operator</p>
+      <a href="projects/project1.html" class="cta-button">View My Projects</a>
+    </div>
+  </header>
+
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
