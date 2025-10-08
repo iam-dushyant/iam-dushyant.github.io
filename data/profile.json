@@ -1,0 +1,17 @@
+{
+  "name": "Your Name",
+  "role": "Software Engineer",
+  "location": "London, UK",
+  "about": "I build delightful, performant web experiences and scalable systems. Currently seeking roles where I can ship impactful features and grow as a full\u2011stack engineer.",
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "React",
+    "Node.js",
+    "Docker"
+  ],
+  "email": "you@example.com",
+  "github": "https://github.com/your-username",
+  "linkedin": "https://www.linkedin.com/in/your-username/"
+}
