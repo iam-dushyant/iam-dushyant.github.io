@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<section class="hero card">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+  <p><strong>{{ site.data.profile.name }}</strong> — {{ site.data.profile.role }} in {{ site.data.profile.location }}</p>
+  <div>
+    {%- for skill in site.data.profile.skills -%}
+      <span class="badge">{{ skill }}</span>
+    {%- endfor -%}
+  </div>
+</section>
+
+<h2>Featured Projects</h2>
+<div class="grid">
+  {%- assign featured = site.projects | where_exp: "p", "p.tags contains 'featured'" | sort: "order" -%}
+  {%- for p in featured limit:6 -%}
+    <article class="card project-card" data-search="{{ p.title }} {{ p.summary }} {{ p.tech | join: ' ' }}" data-tech="{{ p.tech | join: ',' }}">
+      <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+      <p>{{ p.summary }}</p>
+      <p>
+        {%- for t in p.tech -%}
+          <span class="badge">{{ t }}</span>
+        {%- endfor -%}
+      </p>
+      <p>
+        {%- if p.live_url -%}<a href="{{ p.live_url }}" target="_blank">Live</a> · {%- endif -%}
+        <a href="{{ p.repo_url }}" target="_blank">Code</a>
+      </p>
+    </article>
+  {%- endfor -%}
+</div>
+
+<h2>Latest Posts</h2>
+<div class="grid">
+  {%- for post in site.posts limit:6 -%}
+    <article class="card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      <p><small>{{ post.date | date_to_string }}</small></p>
+    </article>
+  {%- endfor -%}
+</div>
