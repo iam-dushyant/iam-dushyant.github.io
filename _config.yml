@@ -1,0 +1,33 @@
+title: Dushyant Khatri
+description: Personal website.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://iam-dushyant.github.io" # change to your GitHub Pages URL or custom domain
+
+# Enable collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+      tags: ["featured"]
+      hero_image: /assets/images/site/placeholder-hero.jpg
+
+theme: null
+
+# Exclude node_modules or build stuff if any
+exclude:
+  - node_modules
+  - README.md

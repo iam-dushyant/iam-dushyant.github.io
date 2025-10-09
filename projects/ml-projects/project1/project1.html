@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tracking human activity with mobile phone movement</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    background: #fdf8f2;
+    color: #333;
+    }
+
+    .hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Adjust height as needed */
+    overflow: hidden;
+    }
+
+    .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills and crops nicely */
+    }
+
+    .hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 232, 155);
+    font-size: 4rem;
+    text-align: center;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    margin: 0;
+    padding: 0 2rem;       /* Adds horizontal space inside the text block */
+    max-width: 90%;        /* Prevents it from overflowing hero container */
+    width: 80%;            /* Gives it a nice wider text box */
+    box-sizing: border-box; /* Makes padding play nicely with width */
+    word-wrap: break-word;
+    }
+
+    h2, h3 {
+    margin-top: 2rem;
+    color: #222;
+    }
+    code {
+      color: #000000;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #ffffff;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <img src="Project1.jpeg" alt="Hero Image" class="hero-image" />
+    <h1 class="hero-title">Tracking human activity with mobile phone movement</h1>
+  </div>
+
+  <p>
+    How many of us face problems when your Apple Watch asks you to stand up when you are already standing? Well, that happens to me! 
+    ... Or even when you're on a motored two-wheeler (motorbike, etc.), and the Watch or the phone detects that you are cycling. 
+    That is a Machine Learning algorithm wrongly detecting similar actions, along with change in location.
+  </p>
+  <p>
+    This Machine Learning projects looks at all preliminary actions humans would perform - sitting, standing, laying, walking, 
+    walking downstairs, and walking upstairs. With multiple models used, their accuracy is compared, and wrongly recognised actions 
+    are compared to assess why they might be wrongly recognised. Is there something wrong with the data, or is that the actions are 
+    very similar which makes it challenging for models to distinguish?
+  </p>
+
+  <div class="section">
+    <h2>🧩 Project Objectives</h2>
+    <ul>
+      <li>To recognise, using Machine Learning, the actions were detected correctly.</li>
+      <li>To quantify accuracy and assess falsely detected classification.</li>
+      <li>To consider and discuss options to improve the accuracy of models.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>⚙️ My Implementation</h2>
+    <ol>
+      <li>Collected data with x parameters/features.</li>
+      <li>The data is fairly clean, so no data cleaning was performed.</li>
+      <li>Trained <code>LinearRegression</code> model using scikit-learn.</li>
+      <li>Evaluated the model with RMSE, R² score, and confusion matrix.</li>
+    </ol>
+
+    <pre><code>from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(X_train, y_train)</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>📊 Output</h2>
+    <p>
+      The model achieved acuuracy of.
+    </p>
+    <img src="" alt="Confusion Matrix" />
+  </div>
+
+  <div class="section">
+    <h2>✏️ What I Learned</h2>
+    <ul>
+      <li>Analysing and comparing different models, especially voting algorithms, where I used a combination of ML models.</li>
+      <li>To recognise wrongly predicted classifications and assess why these were wrongly assessed.</li>
+      <li>Next step: Options to improve the model or the data.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Resources</h2>
+    <ul>
+      <li><a href="https://github.com/iam-dushyant/Human-Activity-Recognition" target="_blank">View on GitHub</a></li>
+      <li><a href="https://github.com/iam-dushyant/Human-Activity-Recognition/tree/main/notebooks/Initial_data_exploration.ipynb" target="_blank">Open Notebook</a></li>
+      <li><a href="https://github.com/iam-dushyant/Human-Activity-Recognition/tree/main/data/raw" target="_blank">Download Dataset</a></li>
+    </ul>
+  </div>
+
+</body>
+</html>

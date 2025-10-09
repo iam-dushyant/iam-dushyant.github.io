@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Machine Learning Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    input[type="text"] {
+      font-size: 18px;
+      font-weight: bold;
+      height: 50px;
+      width: 100%;
+      padding: 0 10px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;         /* This ensures boxes wrap to next line */
+      gap: 16px;               /* Space between boxes */
+      justify-content: flex-start;
+      max-width: 100%;         /* Prevents overflow */
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    .project-box {
+      flex: 1 1 200px;
+      border: 1px solid #ccc;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 2px 2px 6px #aaa;
+      border-radius: 12px;
+      transition: transform 0.3s, background 0.3s;
+      background-color: #bee5ea;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .project-box:hover {
+      transform: scale(1.05);
+      background-color: #e0f7fa;
+      box-shadow: 4px 4px 12px #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Machine Learning Projects</h1>
+  <input type="text" id="searchInput" placeholder="Search projects..." onkeyup="searchProjects()" />
+
+  <div class="container">
+    <a href="ml-projects/project1/project1.html" class="project-box">Human Activity Recognition</a>
+    <a href="ml-projects/project2/project2.html" class="project-box">MNIST classification</a>
+    <a href="ml-projects/project3.html" class="project-box"></a>
+  </div>
+
+  <script>
+    function searchProjects() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.project-item');
+      items.forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
