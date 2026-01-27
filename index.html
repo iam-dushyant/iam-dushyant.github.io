@@ -1,85 +1,22 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dushyant Khatri</title>
-  <meta name="description" content="CV portfolio of Dushyant Khatri: projects, resume, and contact." />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="avatar" aria-hidden="true">YN</div>
-        <div>
-          <div class="brand-name">Dushyant Khatri</div>
-          <div class="brand-role" id="brand-role">Site Reliability Engineer • Glasgow, Scotland</div>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#resume" class="nav-link">Resume</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <button id="theme-toggle" class="btn-ghost" aria-label="Toggle theme">🌓</button>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <section id="about" class="card section">
-      <h1>About Me</h1>
-      <p id="about-text">Formally trained in Ship Design and Architecture, Aero-Mechanical Engineering,
-        and Computer Science. I have worked as a Site Reliability Engineer for 3 years.
-      </p>
-      <div id="skills" class="chips"></div>
-    </section>
+    <nav>
+        <button onclick="showHome()">Home</button>
+        <span id="nav-breadcrumb"></span>
+    </nav>
 
-    <section id="projects" class="section">
-      <div class="card card-toolbar">
-        <div class="toolbar">
-          <h2>Projects</h2>
-          <div class="controls">
-            <input id="search" type="text" placeholder="Search projects…" aria-label="Search projects" />
-            <select id="tech-filter" aria-label="Filter by technology">
-              <option value="">All tech</option>
-              <option value="">Python</option>
-              <option value="">C++</option>
-              <option value="">AWS</option>
-              <option value="">Azure</option>
-              <option value="">Docker</option>
-              <option value="">Jenkins</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div id="project-grid" class="grid"></div>
-    </section>
+    <main id="app">
+        </main>
 
-    <section id="resume" class="card section">
-      <h2>Resume</h2>
-      <p>
-        <a id="resume-download" class="btn" href="assets/resume.pdf" download>Download PDF</a>
-      </p>
-      <div class="embed">
-        <iframe title="Embedded Resume PDF" src="assets/resume.pdf"></iframe>
-      </div>
-    </section>
-
-    <section id="contact" class="card section">
-      <h2>Contact</h2>
-      <ul class="contact-list" id="contact-list"></ul>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> <span id="footer-name">Your Name</span>. Built with HTML/CSS/JS.</small>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
