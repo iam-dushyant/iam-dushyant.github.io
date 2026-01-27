@@ -108,3 +108,52 @@ button.submit-btn:hover { filter: brightness(1.1); }
 /* Chart Sizing */
 .chart-wrapper { display: flex; flex-direction: column; align-items: center; padding: 2rem; }
 .chart-container { position: relative; width: 100%; max-width: 450px; max-height: 450px; }
+
+/* Container to prevent content from hitting the screen edges */
+.viewport-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* The Grid for Project Cards */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Interactive Project Card */
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    
+    /* The Magic: Transition allows smooth expansion */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effects: Expand and Darken */
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Slight expansion */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background-color: rgba(0, 0, 0, 0.05); /* Slight darkening overlay */
+}
+
+/* Specific Dark Mode Hover */
+[data-theme="dark"] .project-card:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Slight lightening for dark mode */
+}
+
+/* Detail Page Content Styling */
+.content-body {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--text);
+    padding: 1rem 0;
+}

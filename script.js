@@ -66,33 +66,43 @@ function showHome() {
 
 function showDomainPage(domainName) {
     const domain = domains[domainName];
-    let html = `
-        <button class="back-btn" onclick="showHome()">← Back to Overview</button>
-        <h1>${domainName} Projects</h1>
-        <div class="project-grid">`;
     
-    domain.projects.forEach(p => {
-        html += `
-            <div class="project-card" onclick="showProjectDetails('${domainName}', '${p.id}')">
-                <h3>${p.title}</h3>
-                <p>${p.desc}</p>
-                <small>Click to read more →</small>
-            </div>`;
-    });
-    
-    html += `</div>`;
-    app.innerHTML = html;
+    // Wrapping everything in a viewport-container for alignment
+    app.innerHTML = `
+        <div class="viewport-container">
+            <button class="back-btn" onclick="showHome()">← Back to Overview</button>
+            <h1 style="border-left: 5px solid ${domain.color}; padding-left: 15px;">
+                ${domainName} Projects
+            </h1>
+            <div class="project-grid">
+                ${domain.projects.map(p => `
+                    <div class="project-card" onclick="showProjectDetails('${domainName}', '${p.id}')">
+                        <h3>${p.title}</h3>
+                        <p>${p.desc}</p>
+                        <span class="read-more">View Details →</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>`;
 }
 
 function showProjectDetails(domainName, projectId) {
     const project = domains[domainName].projects.find(p => p.id === projectId);
+    
     app.innerHTML = `
-        <div class="project-detail">
+        <div class="viewport-container">
             <button class="back-btn" onclick="showDomainPage('${domainName}')">← Back to ${domainName}</button>
-            <h1>${project.title}</h1>
-            <div class="content-body">
-                <p>${project.content}</p>
-            </div>
+            <article class="project-detail">
+                <header>
+                    <span class="category-tag" style="background: ${domains[domainName].color}">
+                        ${domainName}
+                    </span>
+                    <h1>${project.title}</h1>
+                </header>
+                <div class="content-body">
+                    ${project.content}
+                </div>
+            </article>
         </div>`;
 }
 
