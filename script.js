@@ -1,69 +1,158 @@
-// 1. Data Structure
 const domains = {
-    'ML': {
+    'AI/ML': {
         color: '#ff6384',
         projects: [
-            { id: 'ml-1', title: 'NLP Sentiment Engine', desc: 'A transformer-based model for social media analysis.', content: 'Full details about NLP...' },
-            { id: 'ml-2', title: 'Computer Vision API', desc: 'Real-time object detection.', content: 'Full details about CV...' }
+            { id: 'ai-1', title: 'Sentiment Analysis', desc: 'NLP project.', content: 'Detailed analysis of sentiment using transformers...' },
+            { id: 'ai-2', title: 'Object Detection', desc: 'CV project.', content: 'Real-time detection using YOLOv8...' },
+            { id: 'ai-3', title: 'Generative Art', desc: 'GANs project.', content: 'Creating synthetic imagery with GANs...' }
         ]
     },
     'HPC': {
         color: '#36a2eb',
         projects: [
-            { id: 'hpc-1', title: 'CUDA Fluid Simulation', desc: 'Parallelized Navier-Stokes solver.', content: 'Full details about CUDA...' }
+            { id: 'hpc-1', title: 'Parallel Matrix Mult', desc: 'MPI/OpenMP project.', content: 'Optimization of matrix operations on clusters...' },
+            { id: 'hpc-2', title: 'Advection problem', desc: 'MPI Project', content: 'Solving fluid dynamics equations in parallel...' }
         ]
     }
 };
 
 const app = document.getElementById('app');
 
-// 2. Render Functions
-function showHome() {
-    app.innerHTML = '<div class="chart-container"><canvas id="donutChart"></canvas></div>';
-    const ctx = document.getElementById('donutChart').getContext('2d');
+// --- VIEW CONTROLLERS ---
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
-    const chart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: Object.keys(domains),
-            datasets: [{
-                data: Object.keys(domains).map(() => 1), // Equal segments
-                backgroundColor: Object.values(domains).map(d => d.color)
-            }]
-        },
-        options: {
-            onClick: (evt, item) => {
-                if (item.length > 0) {
-                    const index = item[0].index;
-                    const label = chart.data.labels[index];
-                    showDomainPage(label);
-                }
-            }
-        }
-    });
+    document.documentElement.setAttribute('data-theme', targetTheme);
+    
+    document.getElementById('theme-icon').innerText = targetTheme === 'dark' ? '☀️' : '🌙';
+    
+    localStorage.setItem('theme', targetTheme);
+    
+    if (document.getElementById('donutChart')) {
+        showHome();
+    }
+}
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.getElementById('theme-icon').innerText = savedTheme === 'dark' ? '☀️' : '🌙';
+
+function showHome() {
+    app.innerHTML = `
+        <div class="chart-wrapper">
+            <h2 style="text-align:center">Project Distribution</h2>
+            <div class="chart-container">
+                <canvas id="donutChart"></canvas>
+            </div>
+        </div>`;
+    renderDonutChart();
 }
 
 function showDomainPage(domainName) {
     const domain = domains[domainName];
-    let html = `<h1>${domainName} Projects</h1>`;
+    let html = `
+        <button class="back-btn" onclick="showHome()">← Back to Overview</button>
+        <h1>${domainName} Projects</h1>
+        <div class="project-grid">`;
+    
     domain.projects.forEach(p => {
         html += `
             <div class="project-card" onclick="showProjectDetails('${domainName}', '${p.id}')">
                 <h3>${p.title}</h3>
                 <p>${p.desc}</p>
+                <small>Click to read more →</small>
             </div>`;
     });
+    
+    html += `</div>`;
     app.innerHTML = html;
 }
 
 function showProjectDetails(domainName, projectId) {
     const project = domains[domainName].projects.find(p => p.id === projectId);
     app.innerHTML = `
-        <button onclick="showDomainPage('${domainName}')">← Back to ${domainName}</button>
-        <h2>${project.title}</h2>
-        <div class="content">${project.content}</div>
-    `;
+        <div class="project-detail">
+            <button class="back-btn" onclick="showDomainPage('${domainName}')">← Back to ${domainName}</button>
+            <h1>${project.title}</h1>
+            <div class="content-body">
+                <p>${project.content}</p>
+            </div>
+        </div>`;
 }
 
-// Initialize
-showHome();
+function showContact() {
+    app.innerHTML = `
+        <div class="contact-container">
+            <div class="contact-info">
+                <h1>Contact Me</h1>
+                <p><strong>Name:</strong> Dushyant Khatri</p>
+                <p><strong>Location:</strong> Glasgow, Scotland</p>
+                <p><strong>Email:</strong> dushyant.khatri@icloud.com</p>
+                <p><strong>Phone:</strong> +44 759 653 6143</p>
+            </div>
+            <form action="https://formspree.io/f/xvzaywrz" method="POST">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" name="_replyto" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="5" required placeholder="How can I help you?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>`;
+}
+
+// --- ENGINE: CHART RENDERING ---
+
+function renderDonutChart() {
+    const ctx = document.getElementById('donutChart').getContext('2d');
+    const labels = Object.keys(domains);
+    const projectCounts = labels.map(key => domains[key].projects.length);
+    const colors = labels.map(key => domains[key].color);
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: projectCounts,
+                backgroundColor: colors,
+                borderWidth: 2,
+                hoverOffset: 15
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { position: 'bottom' },
+                tooltip: {
+                    callbacks: {
+                        label: (ctx) => {
+                            const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((ctx.raw / total) * 100).toFixed(1);
+                            return `${ctx.label}: ${ctx.raw} projects (${percentage}%)`;
+                        }
+                    }
+                }
+            },
+            onClick: (evt, item, chart) => {
+                if (item.length > 0) {
+                    const index = item[0].index;
+                    showDomainPage(chart.data.labels[index]);
+                }
+            }
+        }
+    });
+}
+
+// Initialise
+window.onload = showHome;

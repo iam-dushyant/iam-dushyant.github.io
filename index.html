@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Profile</title>
+    <title>Dushyant Khatri | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-    <nav>
-        <button onclick="showHome()">Home</button>
-        <span id="nav-breadcrumb"></span>
+    <nav class="navbar">
+        <div class="nav-logo" onclick="showHome()">Dushyant Khatri</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showHome()">Projects</a></li>
+            <li><a href="#" onclick="showContact()">Contact</a></li>
+            <li>
+                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </li>
+        </ul>
     </nav>
 
     <main id="app">
