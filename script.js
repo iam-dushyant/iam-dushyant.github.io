@@ -18,7 +18,15 @@ const domains = {
     'LaTeX': {
         color: '#fca903',
         projects: [
-            { id: 'latex-1', title: 'CV code', desc: '', content: 'Wonder how I created my CV? Here\'s the code for you to download!' },
+            { id: 'latex-1',
+            title: 'CV code',
+            desc: 'Wonder how I created my CV? Here\'s the code for you to download!',
+            content: `
+            <p> This LaTeX file was last updated in January 2026.</p>
+            <h3> Visual preview </h3>
+            <img src="assets/cv-preview.jpg" alt="CV Preview" class="project-img">
+            <a href="assets/template.zip" class="download-btn">Download Source Code</a>
+            ` },
         ]
     },
     'SQL': {
