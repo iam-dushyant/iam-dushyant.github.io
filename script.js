@@ -1,17 +1,31 @@
 const domains = {
-    'AI/ML': {
+    'Python': {
         color: '#ff6384',
         projects: [
-            { id: 'ai-1', title: 'Sentiment Analysis', desc: 'NLP project.', content: 'Detailed analysis of sentiment using transformers...' },
-            { id: 'ai-2', title: 'Object Detection', desc: 'CV project.', content: 'Real-time detection using YOLOv8...' },
-            { id: 'ai-3', title: 'Generative Art', desc: 'GANs project.', content: 'Creating synthetic imagery with GANs...' }
+            { id: 'py-1', title: 'Sentiment Analysis', desc: 'NLP project.', content: 'Detailed analysis of sentiment using transformers...' },
+            { id: 'py-2', title: 'Object Detection', desc: 'CV project.', content: 'Real-time detection using YOLOv8...' },
+            { id: 'py-3', title: 'Generative Art', desc: 'GANs project.', content: 'Creating synthetic imagery with GANs...' }
         ]
     },
-    'HPC': {
+    'C++': {
+        color: '#08da35',
+        projects: [
+            { id: 'cpp-1', title: 'Sentiment Analysis', desc: 'NLP project.', content: 'Detailed analysis of sentiment using transformers...' },
+            { id: 'cpp-2', title: 'Object Detection', desc: 'CV project.', content: 'Real-time detection using YOLOv8...' },
+            { id: 'cpp-3', title: 'Generative Art', desc: 'GANs project.', content: 'Creating synthetic imagery with GANs...' }
+        ]
+    },
+    'LaTeX': {
+        color: '#fca903',
+        projects: [
+            { id: 'latex-1', title: 'CV code', desc: '', content: 'Wonder how I created my CV? Here\'s the code for you to download!' },
+        ]
+    },
+    'SQL': {
         color: '#36a2eb',
         projects: [
-            { id: 'hpc-1', title: 'Parallel Matrix Mult', desc: 'MPI/OpenMP project.', content: 'Optimization of matrix operations on clusters...' },
-            { id: 'hpc-2', title: 'Advection problem', desc: 'MPI Project', content: 'Solving fluid dynamics equations in parallel...' }
+            { id: 'sql-1', title: 'Parallel Matrix Mult', desc: 'MPI/OpenMP project.', content: 'Optimization of matrix operations on clusters...' },
+            { id: 'sql-2', title: 'Advection problem', desc: 'MPI Project', content: 'Solving fluid dynamics equations in parallel...' }
         ]
     }
 };
