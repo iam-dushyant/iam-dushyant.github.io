@@ -38,8 +38,8 @@ const domains = {
         projects: [
             { 
                 id: 'latex-1', 
-                title: 'Professional CV Template', 
-                desc: 'Optimized LaTeX source code.', 
+                title: 'My CV', 
+                desc: 'Wonder how my CV was created? Take a look 👀', 
                 content: `
                     <p>This LaTeX file was last updated in January 2026.</p>
                     <h3>Visual preview</h3>
@@ -54,6 +54,17 @@ const domains = {
         projects: [
             { id: 'sql-1', title: 'Database Optimization', desc: 'Query tuning.', content: 'Index optimization for large datasets.' },
             { id: 'sql-2', title: 'Analytics Dashboard', desc: 'Data modeling.', content: 'Complex JOIN operations for business intel.' }
+        ]
+    },
+    'Bash':{
+        color: '#D83185',
+        projects: [
+            {id: 'bash-1', title: 'Own developed MLOps CLI',
+            desc: 'My first attempt in creating a CLI exploring the ML Operations Lifecycle',
+            content: `
+            <h3>Introduction</h3>
+
+            `}
         ]
     }
 };
