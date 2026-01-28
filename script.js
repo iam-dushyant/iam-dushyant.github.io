@@ -119,13 +119,20 @@ function renderMainChart() {
             datasets: [{
                 data: data,
                 backgroundColor: colors,
-                hoverOffset: 20
+                hoverOffset: -20
             }]
         },
         options: {
             responsive: true,
+            maintainAspectRatio: true,
+            padding: {
+                top: 60,
+                bottom: 20,
+                left: 20,
+                right: 20
+            },
             plugins: {
-                legend: { position: 'bottom', labels: { color: textColor } }
+                legend: { position: 'bottom', labels: { color: textColor }, padding: 60 }
             },
             onClick: (evt, item) => {
                 if (item.length > 0) {
@@ -201,9 +208,16 @@ function renderSubChart(domainName, subSkills) {
         type: 'doughnut',
         data: {
             labels: finalLabels,
-            datasets: [{ data: finalData, backgroundColor: finalColors }]
+            datasets: [{ data: finalData, backgroundColor: finalColors, hoverOffset: -10 }]
         },
         options: {
+            responsive: true,
+            padding: {
+                top: 40,
+                bottom: 20,
+                right: 20,
+                left: 20
+            },
             plugins: {
                 legend: { position: 'right', labels: { color: textColor } }
             },
