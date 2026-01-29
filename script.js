@@ -10,7 +10,22 @@ const domains = {
             colors: ['#4c8cb5', '#ee4c2c', '#150458', '#FF9900', '#0089D6', '#4285F4']
         },
         projects: [
-            { id: 'py-1', tags: ['NumPy'], title: 'Sentiment Analysis', desc: 'NLP project.', content: 'Detailed analysis of sentiment using transformers...' },
+            { id: 'py-1', 
+            tags: ['NumPy'], 
+            title: 'MNist Classification', desc: 'Simple Classification problem', 
+            content: `
+            <h3>Introduction</h3>
+            <p> A classic classification problem for beginners! I have taken a different approach 
+            to make it a more holistic software engineering problem, elevating to an enterprise-quality 
+            code.
+            </p>
+            <p>
+            Have a look at my GitHub repository to find out more!
+            </p>
+            <a href="https://github.com/iam-dushyant/mnist_classification" class="download-btn" target=_blank">
+            Go to GitHub <i class="fa-brands fa-github"></i>
+            </a>
+            `},
             { id: 'py-2', tags: ['AWS'], title: 'Object Detection', desc: 'CV project.', content: 'Real-time detection using YOLOv8...' },
             { id: 'py-3', tags: ['AWS'], title: 'Cloud Sentiment', desc: 'NLP on AWS.', content: 'Scaling transformer models using Lambda...' },
             { id: 'py-4', tags: ['Azure'], title: 'Azure Vision', desc: 'CV project.', content: 'Implementing Azure Cognitive Services...' },
@@ -61,9 +76,24 @@ const domains = {
         projects: [
             {id: 'bash-1', title: 'Own developed MLOps CLI',
             desc: 'My first attempt in creating a CLI exploring the ML Operations Lifecycle',
+            tags: ['Bash'],
             content: `
             <h3>Introduction</h3>
-
+            <p>
+            MLOps can be complicated, requiring human intervention at each stage of running 
+            ML pipelines. If not requiring human intervention, it could potentially risk on 
+            transparency between input and output.
+            </p>
+            <p>
+            This MLOps CLI allows users to include their parameters at the very start of the 
+            simulation in order to generate accurate results.
+            </p>
+            <p>
+            Find out more by visiting the MLOps GitHub page
+            </p>
+            <a href="https://github.com/iam-dushyant/mlops-cli" class="download-btn" target="_blank">
+            Go to GitHub <i class="fa-brands fa-github"></i>
+            </a>
             `}
         ]
     }
@@ -119,7 +149,8 @@ function renderMainChart() {
             datasets: [{
                 data: data,
                 backgroundColor: colors,
-                hoverOffset: -20
+                hoverOffset: -20,
+                
             }]
         },
         options: {
