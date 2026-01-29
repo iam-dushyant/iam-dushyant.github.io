@@ -6,12 +6,12 @@ const domains = {
     'Python': {
         color: '#ff6384',
         subSkills: {
-            labels: ['NumPy', 'PyTorch', 'Pandas', 'AWS', 'Azure', 'GCP'],
-            colors: ['#4c8cb5', '#ee4c2c', '#150458', '#FF9900', '#0089D6', '#4285F4']
+            labels: ['NumPy', 'Scikit-learn', 'Computer Vision', 'PyTorch', 'Pandas', 'AWS', 'Azure', 'GCP'],
+            colors: ['blue', 'green', 'yellow', 'cyan', 'orange', 'red', 'pink', 'beige']
         },
         projects: [
             { id: 'py-1', 
-            tags: ['NumPy'], 
+            tags: ['Scikit-learn'], 
             title: 'MNist Classification', desc: 'Simple Classification problem', 
             content: `
             <h3>Introduction</h3>
@@ -22,15 +22,24 @@ const domains = {
             <p>
             Have a look at my GitHub repository to find out more!
             </p>
-            <a href="https://github.com/iam-dushyant/mnist_classification" class="download-btn" target=_blank">
+            <a href="https://github.com/iam-dushyant/mnist_classification" class="download-btn" target="_blank">
             Go to GitHub <i class="fa-brands fa-github"></i>
             </a>
             `},
-            { id: 'py-2', tags: ['AWS'], title: 'Object Detection', desc: 'CV project.', content: 'Real-time detection using YOLOv8...' },
-            { id: 'py-3', tags: ['AWS'], title: 'Cloud Sentiment', desc: 'NLP on AWS.', content: 'Scaling transformer models using Lambda...' },
-            { id: 'py-4', tags: ['Azure'], title: 'Azure Vision', desc: 'CV project.', content: 'Implementing Azure Cognitive Services...' },
-            { id: 'py-5', tags: ['NumPy', 'Pandas', 'PyTorch'], title: 'Deep Learning Pipeline', desc: 'Full-stack AI.', content: 'Data processing with Pandas and training in PyTorch.' },
-            { id: 'py-6', tags: ['AWS'], title: 'S3 Image Processor', desc: 'Cloud storage.', content: 'Automatic image tagging on upload.' },
+            { id: 'py-2', 
+            tags: ['Computer Vision'], 
+            title: 'MNist classification using Compute Vision', 
+            desc: 'A different take on the MNist classification problem', 
+            content: `
+            <p>[Placeholder]</p>
+            <a href="https://github.com/iam-dushyant/MNIST_using_Computer_Vision" class="download-btn" target="_blank">
+            Go to GitHub <i class="fa-brands fa-github"></i>
+            </a>
+            ` },
+            //{ id: 'py-3', tags: ['AWS'], title: 'Cloud Sentiment', desc: 'NLP on AWS.', content: 'Scaling transformer models using Lambda...' },
+            //{ id: 'py-4', tags: ['Azure'], title: 'Azure Vision', desc: 'CV project.', content: 'Implementing Azure Cognitive Services...' },
+            //{ id: 'py-5', tags: ['NumPy', 'Pandas', 'PyTorch'], title: 'Deep Learning Pipeline', desc: 'Full-stack AI.', content: 'Data processing with Pandas and training in PyTorch.' },
+            //{ id: 'py-6', tags: ['AWS'], title: 'S3 Image Processor', desc: 'Cloud storage.', content: 'Automatic image tagging on upload.' },
         ]
     },
     'C++': {
